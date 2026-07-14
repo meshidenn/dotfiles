@@ -2,24 +2,23 @@
 
 {
   # ============================================================
-  # 旧 Linux 機の .bashrc からの隔離枠。
-  # TODO(Phase 5): Linux 実機で必要なものだけ残し、不要な行は削除する。
+  # 旧 Linux 機の .bashrc から移植した会社機向け設定(2026-07-12 全行使用中と確認済み)。
   # 旧 .bashrc のハードコード PATH(miniconda / /home/hiroki/... 直書き)は
   # 復元せず削除済み。必要なら git 履歴(bash/.bashrc)から辿れる。
   # ============================================================
 
-  # TODO(Phase 5): keychain による ssh-agent 共有が今も必要か確認
+  # keychain による ssh-agent 共有(会社機で使用)
   home.packages = with pkgs; [ keychain ];
 
   programs.bash = {
     shellAliases = {
-      # TODO(Phase 5): 各 alias の要否を実機で確認
+      # 会社機で使用中の alias
       idea = "intellij-idea-ultimate";
       alert = "notify-send --urgency=low -i \"$([ $? = 0 ] && echo terminal || echo error)\" \"$(history|tail -n1|sed -e 's/^\\s*[0-9]\\+\\s*//;s/[;&|]\\s*alert$//')\"";
       login01 = "gcloud compute ssh bastion --project speeda-193900 --zone asia-northeast1-a";
     };
     initExtra = ''
-      # TODO(Phase 5): 以下すべて実機で要否確認(旧 .bashrc からの温存)
+      # 以下はすべて会社機で使用中(2026-07-12 確認済み)。自宅サーバーでは空振りするが無害
 
       # aqua グローバル設定(skaffold など)
       export AQUA_GLOBAL_CONFIG="''${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml"

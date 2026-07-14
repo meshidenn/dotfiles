@@ -1,7 +1,14 @@
 # Nix (home-manager) 移行 — 引き継ぎドキュメント
 
 作成: 2026-07-05（Claude Code セットアップ監査セッションにて）
-ステータス: **Mac 側完了（2026-07-07, issue #1）。残りは Phase 5（Linux 実機）のみ。**
+ステータス: **全4台で移行完了（2026-07-12）。** Mac（#1）、自宅サーバー x86_64 / thinkstation aarch64（#1）、会社機（#7）。settings.json の会社/個人プロファイル分離も完了（#4）。
+
+## 運用メモ（移行完了後）
+
+- 適用: 各マシンで `./setup.sh`。**会社機のみ** uname で判別できないため `./setup.sh hiroki-iida@work-linux` と明示指定
+- settings.json は生成物（untracked）。変更は `settings.base.json` か `settings.{personal,work}.json` を編集して switch
+- linux.nix の温存設定（JAVA_HOME/krew/JetBrains/aqua/keychain/alias 群）は会社機で全行使用中と確認済み（2026-07-12）。自宅サーバーでは空振りするが無害
+- 旧 curl 版バイナリは 2026-07-12 に整理開始（~/.local/bin.old/ へ退避方式）。~/.local/share/mise はランタイム実体なので消さないこと
 
 ## 移行結果サマリ（2026-07-07）
 
