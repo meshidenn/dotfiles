@@ -57,7 +57,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "command -v jq >/dev/null 2>&1 || exit 0; f=$(jq -r '.tool_input.file_path // empty' 2>/dev/null); case \"$f\" in *.py) ~/.local/bin/uvx ruff format --quiet \"$f\" 2>/dev/null; ~/.local/bin/uvx ruff check --fix --quiet \"$f\" 2>/dev/null;; esac; true",
+            "command": "command -v jq >/dev/null 2>&1 || exit 0; f=$(jq -r '.tool_input.file_path // empty' 2>/dev/null); case \"$f\" in *.py) $HOME/.nix-profile/bin/uvx ruff format --quiet \"$f\" 2>/dev/null; $HOME/.nix-profile/bin/uvx ruff check --fix --quiet \"$f\" 2>/dev/null;; esac; true",
             "timeout": 30
           }
         ]
