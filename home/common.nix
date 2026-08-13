@@ -20,6 +20,7 @@ in
     bun
     gh
     jq
+    coreutils # GNU ls を mac/linux 共通で使うため(ls --color=auto を有効化する目的)
   ];
 
   # ~/.local/bin(AI CLI 群のインストール先)は PATH に残す
@@ -33,9 +34,10 @@ in
     historyFileSize = 2000;
     shellOptions = [ "histappend" "checkwinsize" ];
     shellAliases = {
-      ll = "ls -alF";
-      la = "ls -A";
-      l = "ls -CF";
+      ls = "ls --color=auto";
+      ll = "ls -alF --color=auto";
+      la = "ls -A --color=auto";
+      l = "ls -CF --color=auto";
       g = "git";
       k = "kubectl";
       gitpp = "git pull -r --au && git push";
