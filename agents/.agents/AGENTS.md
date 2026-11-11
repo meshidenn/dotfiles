@@ -22,7 +22,7 @@
   - type: fix, add, del, update, refactor, etc.（例: `#12 add:max_retries_param`）
 - Branch naming: `{project_name or feature/exp}/<issue_number>-<descriptive-words>`
   - 例: `feature/12-add-retry-logic`。既存リポジトリに規約があればそちらを優先
-- 新しい作業を始めるときの issue + branch 作成〜連携手順は `git-issue-flow` skill に従う
+- Issue が不要な作業でブランチやコミットを作る場合は、issue number を省略する。コミットメッセージは `<type>:<descriptive_words>`（例: `update:review_metadata`）、ブランチ名は `{project_name or feature/exp}/<descriptive-words>`（例: `dso-knowledge-base/review-paper`）とする。
 
 ## Strict Rules (MUST follow)
 - NEVER push without explicit approval
