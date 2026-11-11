@@ -51,7 +51,7 @@
 
 ```
 dotfiles/            # 旧 setting_backup。GitHub も meshidenn/dotfiles にリネーム済み（2026-07-05）
-├── agents/.agents/          # ★クロスエージェント正本: AGENTS.md + skills/(deep-research, git-issue-flow, retrospect)
+├── agents/.agents/          # ★クロスエージェント正本: AGENTS.md + skills/(deep-research, retrospect)
 ├── claude/.claude/          # CLAUDE.md(→AGENTS.mdへのsymlink), settings.json, skills(→agents/skillsへのsymlink)
 ├── bash/                    # .bashrc, .bash_profile, .profile
 ├── tmux/.tmux.conf
@@ -125,7 +125,7 @@ home/
 ## 検証チェックリスト
 
 - [ ] `home-manager switch` 後、上記 symlink 10本がすべて正しい先を指す
-- [ ] Claude Code: 新セッション起動 → skill 一覧に deep-research / git-issue-flow / retrospect が出る
+- [ ] Claude Code: 新セッション起動 → skill 一覧に deep-research / retrospect が出る
 - [ ] Claude Code: `.py` を Write すると ruff が走る／通知が出る（Mac: 通知センター、Linux: notify-send）
 - [ ] `~/.claude/projects/` への書き込みができる（read-only になっていない）
 - [ ] Codex: `~/.codex/AGENTS.md` から共通指示が読める
