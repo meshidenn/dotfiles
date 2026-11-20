@@ -5,7 +5,7 @@ let
   dotfilesDir = "${config.home.homeDirectory}/dotfiles";
 in
 {
-  imports = [ ./claude-settings.nix ];
+  imports = [ ./claude-settings.nix ./codex-skills.nix ];
 
   # home-manager 自身のバージョン互換基準(初回導入時の値から変えない)
   home.stateVersion = "25.05";

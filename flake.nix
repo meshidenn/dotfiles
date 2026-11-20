@@ -7,14 +7,26 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Codex 用スキルの取得元(flake ではなくソースとして取り込み、flake.lock で版を固定)
+    # 更新: nix flake update anthropic-skills knowledge-work-plugins
+    anthropic-skills = {
+      url = "github:anthropics/skills";
+      flake = false;
+    };
+    knowledge-work-plugins = {
+      url = "github:anthropics/knowledge-work-plugins";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
     let
       # ユーザー名・home ディレクトリ・OS 差分モジュールを環境ごとに指定する
       mkHome = { system, username, homeDirectory, modules }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
+          # モジュールから flake input(スキル取得元)を参照できるようにする
+          extraSpecialArgs = { inherit inputs; };
           modules = [
             {
               home.username = username;
