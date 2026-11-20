@@ -46,3 +46,4 @@ nix run home-manager -- switch --flake ~/dotfiles#hiroki-iida@linux  # Linux
 |--------|------|
 | [mise](https://mise.jdx.dev/) / [starship](https://starship.rs/) / [fzf](https://github.com/junegunn/fzf) / [zoxide](https://github.com/ajeetdsouza/zoxide) / [uv](https://github.com/astral-sh/uv) / bun / gh / jq | home-manager (`home/common.nix`) |
 | [Claude Code](https://claude.ai/claude-code) / Codex / Antigravity CLI | setup.sh(自己アップデート機構があるため Nix 管理外) |
+| Claude Code plugins([anthropics/skills](https://github.com/anthropics/skills) / [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) 等の marketplace) | `claude/.claude/settings.base.json` の `extraKnownMarketplaces` / `enabledPlugins` |

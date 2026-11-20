@@ -69,13 +69,30 @@
     "github@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": true,
+    "example-skills@anthropic-agent-skills": true,
+    "claude-api@anthropic-agent-skills": true,
+    "productivity@knowledge-work-plugins": true,
+    "engineering@knowledge-work-plugins": true,
+    "data@knowledge-work-plugins": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
       "source": {
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      }
+    },
+    "knowledge-work-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/knowledge-work-plugins"
       }
     }
   },
